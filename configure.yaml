@@ -1,0 +1,22 @@
+dataset:
+  - path: ./markdown_files/
+    type: markdown
+  - path: ./data/tds_discourse_data.json
+    type: json
+
+embed:
+  type: openai
+  model: text-embedding-3-small
+  field: content
+
+index:
+  type: chromadb
+  path: ./vector_index
+
+query:
+  type: rag
+  retriever:
+    top_k: 3
+
+serve:
+  type: fastapi

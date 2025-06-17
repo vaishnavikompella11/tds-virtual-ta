@@ -1,0 +1,19 @@
+# Byte-compiled / cache
+__pycache__/
+*.pyc
+
+# Virtual environments
+.venv/
+
+# Environment variables
+.env
+*.env
+
+# Ignore chroma DB and local SQLite DB
+
+knowledge_base.db
+metadata.json
+
+
+# VSCode or editor folders
+.vscode/
