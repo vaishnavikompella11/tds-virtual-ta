@@ -28,6 +28,10 @@ class AnswerOutput(BaseModel):
     answer: str
     links: list[dict]  # {"text": ..., "url": ...}
 
+@app.get("/")
+def root():
+    return {"message": "TDS Virtual TA is live!"}
+
 @app.post("/api/", response_model=AnswerOutput)
 def handle_query(input: QuestionInput):
     question = input.question
