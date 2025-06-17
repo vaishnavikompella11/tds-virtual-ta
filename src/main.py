@@ -32,6 +32,10 @@ class AnswerOutput(BaseModel):
 def root():
     return {"message": "TDS Virtual TA is live!"}
 
+@app.get("/test")
+def test():
+    return {"message": "Docs should load now"}
+
 @app.post("/api/", response_model=AnswerOutput)
 def handle_query(input: QuestionInput):
     question = input.question
